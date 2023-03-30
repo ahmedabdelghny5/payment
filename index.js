@@ -3,7 +3,7 @@ import { appRouter } from './module/index.routes.js'
 const app = express();
 import { config } from 'dotenv';
 config()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT 
 
 
 appRouter(app)

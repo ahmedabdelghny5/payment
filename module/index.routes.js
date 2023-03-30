@@ -3,11 +3,13 @@ import express from 'express';
 import {dbConnection} from '../DB/dbConnection.js'
 import { AppError } from '../utils/AppError.js';
 import { globalError } from '../utils/globalError.js';
-
+import cors from 'cors'
 
 export const appRouter = (app) => {
     
     app.use(express.json())
+    app.use(express.urlencoded({ extended:false }))
+    app.use(cors({}))
     //api setUp routing
     app.use('/user', userRoutes)
 
